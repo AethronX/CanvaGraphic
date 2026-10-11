@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>Portfolio</title>
+<link rel="stylesheet" href="assets/fonts/fonts.css">
+<style>
+:root{
+  --ink:#0E0F12; --ink2:#1A1C22; --paper:#F7F4EF; --line:#D9D2C7;
+  --gold:#C8963E; --clay:#B4543A; --sage:#5E7360; --mute:#8A8372;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+@page{size:297mm 210mm;margin:0}
+body{font-family:'Cairo',sans-serif;color:var(--ink);background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.p{width:297mm;height:210mm;position:relative;overflow:hidden;page-break-after:always;background:var(--paper);padding:18mm 20mm}
+.p:last-child{page-break-after:auto}
+.en{font-family:'Inter',sans-serif;direction:ltr}
+.ser{font-family:'Playfair Display',serif}
+h1{font-weight:900;line-height:1.08}
+h2{font-size:30pt;font-weight:900;line-height:1.15;letter-spacing:-.4pt}
+h3{font-size:14pt;font-weight:700}
+p,li{font-size:10.5pt;line-height:1.75;color:var(--ink2)}
+small{font-size:8pt}
+.mute{color:var(--mute)}
+.kicker{font-family:'Inter',sans-serif;direction:ltr;font-size:7.5pt;font-weight:600;letter-spacing:2.2pt;text-transform:uppercase;color:var(--gold)}
+.folio{position:absolute;bottom:10mm;left:20mm;right:20mm;display:flex;justify-content:space-between;align-items:center;font-family:'Inter',sans-serif;direction:ltr;font-size:7.5pt;letter-spacing:1.4pt;color:var(--mute);border-top:1px solid var(--line);padding-top:4mm}
+.rule{height:1px;background:var(--line);margin:6mm 0}
+.grid{display:grid;gap:7mm}
+.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+.card{background:#fff;border:1px solid var(--line);border-radius:3mm;padding:7mm}
+.tag{display:inline-block;font-size:8pt;font-weight:600;padding:1.2mm 3.4mm;border:1px solid var(--line);border-radius:20mm;color:var(--ink2);background:#fff}
+.chip{display:inline-block;font-size:8pt;font-weight:700;padding:1.2mm 3.4mm;border-radius:20mm;background:var(--ink);color:#fff}
+.num{font-family:'Inter',sans-serif;font-size:26pt;font-weight:800;color:var(--gold);line-height:1}
+.hd{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:8mm}
+
+/* ---------- cover ---------- */
+.cover{background:var(--ink);color:#fff;padding:0}
+.cover .inner{position:absolute;inset:0;padding:20mm 22mm;display:flex;flex-direction:column;justify-content:space-between;z-index:2}
+.cover h1{font-size:62pt;color:#fff}
+.cover .sub{font-size:13pt;color:#CFC8BA;max-width:120mm;line-height:1.7}
+.blob{position:absolute;border-radius:50%;filter:blur(0px)}
+.b1{width:120mm;height:120mm;background:radial-gradient(circle at 30% 30%,#C8963E,#8a5f1d);left:-26mm;bottom:-40mm;opacity:.92}
+.b2{width:74mm;height:74mm;background:radial-gradient(circle at 40% 30%,#B4543A,#5d2114);left:62mm;bottom:-22mm;opacity:.9}
+.b3{width:44mm;height:44mm;border:1px solid rgba(255,255,255,.35);background:none;left:120mm;bottom:30mm}
+.covmeta{display:flex;gap:10mm;align-items:center;color:#CFC8BA;font-family:'Inter',sans-serif;direction:ltr;font-size:8pt;letter-spacing:1.6pt}
+
+/* ---------- mock devices / art ---------- */
+.mock{border-radius:3mm;overflow:hidden;position:relative;border:1px solid var(--line);background:#fff}
+.phone{width:46mm;height:94mm;border-radius:7mm;background:#fff;border:2.2mm solid #15161a;overflow:hidden;position:relative;box-shadow:0 6px 18px rgba(0,0,0,.14)}
+.sq{aspect-ratio:1/1;border-radius:2mm;overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;text-align:center}
+.story{aspect-ratio:9/16;border-radius:2mm;overflow:hidden;position:relative}
+.pal{display:flex;height:16mm;border-radius:2mm;overflow:hidden;border:1px solid var(--line)}
+.pal div{flex:1}
+.logo-mark{width:26mm;height:26mm;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:16pt}
+.bar{height:3mm;border-radius:20mm;background:var(--line)}
+.caption{font-size:8pt;color:var(--mute);margin-top:2.5mm}
+.kv{display:flex;justify-content:space-between;border-bottom:1px solid var(--line);padding:2.6mm 0;font-size:9.5pt}
+.kv b{font-weight:700}
+.bigq{font-size:17pt;font-weight:700;line-height:1.6}
+.pack{border:1px solid var(--line);border-radius:3mm;overflow:hidden;background:#fff}
+.pack .top{padding:6mm;border-bottom:1px solid var(--line)}
+.pack .top.dark{background:var(--ink);color:#fff}
+.pack ul{list-style:none}
+.pack li{padding:2.4mm 6mm;font-size:9.5pt;border-bottom:1px dashed var(--line)}
+.step{display:flex;gap:4mm;align-items:flex-start}
+.step .i{width:9mm;height:9mm;border-radius:50%;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Inter';font-weight:800;font-size:9pt;flex:none}
+</style>
+</head>
+<body>
+
+<!-- 01 COVER -->
+<section class="p cover">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+  <div class="inner">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start">
+      <div class="kicker" style="color:#C8963E">Portfolio — 2026</div>
+      <div class="en" style="font-size:8pt;letter-spacing:2pt;color:#CFC8BA">GRAPHIC DESIGN · BRANDING · UI</div>
+    </div>
+    <div>
+      <div class="kicker" style="margin-bottom:5mm">Selected Works · 4 Years Experience</div>
+      <h1>ملف أعمال<br><span style="color:#C8963E">مصمّم جرافيك</span></h1>
+      <p class="sub" style="margin-top:7mm">هوية بصرية · تصميم سوشال ميديا · باكيجنج · واجهات تطبيقات · إعلانات · تايبوغرافي عربي.<br>أربع سنوات من بناء علامات تجارية تبيع فعلاً — لا مجرد ملفات جميلة.</p>
+    </div>
+    <div class="covmeta">
+      <span>[ الاسم الكامل ]</span><span>·</span><span>[ +000 000 0000 ]</span><span>·</span><span>[ email@domain.com ]</span><span>·</span><span>[ behance.net/username ]</span>
+    </div>
+  </div>
+</section>
+
+<!-- 02 ABOUT -->
+<section class="p">
+  <div class="hd"><div><div class="kicker">About</div><h2>نبذة عني</h2></div><div class="en mute" style="font-size:8pt;letter-spacing:1.6pt">01 / PROFILE</div></div>
+  <div class="grid g2" style="gap:12mm">
+    <div>
+      <p style="font-size:12pt;line-height:1.85">مصمّم جرافيك بخبرة <b>أربع سنوات</b> في بناء الهويات البصرية والحملات التسويقية لعلامات في السعودية والإمارات ومصر. أعمل على تقاطع <b>الجمال والنتيجة</b>: كل خيار لوني أو خطّي مربوط بهدف تجاري واضح — تمييز العلامة، رفع معدل التفاعل، أو زيادة التحويل.</p>
+      <div class="rule"></div>
+      <h3 style="margin-bottom:3mm">ما يميّز عملي</h3>
+      <ul style="padding-right:5mm">
+        <li><b>تايبوغرافي عربي أصيل</b> — تعامل احترافي مع الخط العربي لا ترجمة حرفية للتصاميم الإنجليزية.</li>
+        <li><b>منظومات لا قطع منفردة</b> — دليل هوية قابل للتطبيق على ١٠٠ مادة دون أن تفقد العلامة شكلها.</li>
+        <li><b>تسليم جاهز للإنتاج</b> — ملفات مطابع مضبوطة (CMYK، Bleed، Spot) وأصول تصدير للسوشال والويب.</li>
+        <li><b>سرعة بإيقاع تجاري</b> — جداول حملات رمضان والمواسم مع التزام بالمواعيد.</li>
+      </ul>
+    </div>
+    <div>
+      <div class="grid g2" style="gap:5mm">
+        <div class="card"><div class="num">4+</div><p style="margin-top:2mm">سنوات خبرة احترافية</p></div>
+        <div class="card"><div class="num">60+</div><p style="margin-top:2mm">مشروع مُسلَّم</p></div>
+        <div class="card"><div class="num">25+</div><p style="margin-top:2mm">علامة تجارية عربية</p></div>
+        <div class="card"><div class="num">98%</div><p style="margin-top:2mm">رضا وإعادة تعاقد</p></div>
+      </div>
+      <div class="card" style="margin-top:5mm">
+        <h3 style="margin-bottom:3.5mm">البرامج والأدوات</h3>
+        <div style="display:flex;flex-wrap:wrap;gap:2.2mm">
+          <span class="tag en">Illustrator</span><span class="tag en">Photoshop</span><span class="tag en">InDesign</span>
+          <span class="tag en">After Effects</span><span class="tag en">Figma</span><span class="tag en">Canva Pro</span>
+          <span class="tag en">Premiere Pro</span><span class="tag en">Blender</span>
+        </div>
+        <h3 style="margin:5mm 0 3.5mm">اللغات</h3>
+        <div style="display:flex;gap:2.2mm"><span class="tag">العربية — الأم</span><span class="tag en">English — Professional</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="folio"><span>PORTFOLIO 2026</span><span>ABOUT</span><span>02</span></div>
+</section>
+
+<!-- 03 SERVICES / MARKET FIELDS -->
+<section class="p">
+  <div class="hd"><div><div class="kicker">Services</div><h2>المجالات الأكثر طلباً في السوق العربي</h2></div><div class="en mute" style="font-size:8pt;letter-spacing:1.6pt">02 / SERVICES</div></div>
+  <div class="grid g3">
+    <div class="card"><span class="chip en">01</span><h3 style="margin:4mm 0 2.5mm">الهوية البصرية الكاملة</h3><p>شعار، منظومة ألوان وخطوط، تطبيقات، ودليل هوية (Brand Guidelines) بنسختين عربية وإنجليزية.</p></div>
+    <div class="card"><span class="chip en">02</span><h3 style="margin:4mm 0 2.5mm">تصميم السوشال ميديا</h3><p>قوالب منشورات وستوري وريلز، حملات موسمية (رمضان، اليوم الوطني، الجمعة البيضاء)، ونظام بصري ثابت للحساب.</p></div>
+    <div class="card"><span class="chip en">03</span><h3 style="margin:4mm 0 2.5mm">الباكيجنج والمطبوعات</h3><p>عبوات المنتجات الغذائية والعناية، ليبل، بروشور، منيو، وملفات مطابع جاهزة (Dieline + Mockup).</p></div>
+    <div class="card"><span class="chip en">04</span><h3 style="margin:4mm 0 2.5mm">واجهات التطبيقات UI/UX</h3><p>تصميم تطبيقات ومتاجر إلكترونية عربية RTL، منظومة مكوّنات (Design System)، ونماذج تفاعلية في Figma.</p></div>
+    <div class="card"><span class="chip en">05</span><h3 style="margin:4mm 0 2.5mm">الإعلانات والموشن</h3><p>إعلانات أداء لمنصات ميتا وسناب وتيك توك، لوحات موشن جرافيك، وإعلانات طرقية (Billboards).</p></div>
+    <div class="card"><span class="chip en">06</span><h3 style="margin:4mm 0 2.5mm">التايبوغرافي العربي</h3><p>شعارات مكتوبة بالخط العربي (Logotype)، تخصيص حروف، وحلول تنسيق عربي/لاتيني مزدوج.</p></div>
+  </div>
+  <div class="rule"></div>
+  <p class="mute">تم ترتيب هذه المجالات حسب أعلى طلب فعلي في سوق الخليج ومصر: الهوية والسوشال ميديا والباكيجنج تمثّل الحصة الأكبر من طلبات العلامات الناشئة، ثم واجهات التطبيقات وإعلانات الأداء.</p>
+  <div class="folio"><span>PORTFOLIO 2026</span><span>SERVICES</span><span>03</span></div>
+</section>
+
+<!-- 04 CASE 01 BRAND -->
+<section class="p">
+  <div class="hd"><div><div class="kicker">Case Study 01 — Brand Identity</div><h2>«نُوى» — محمصة قهوة مختصة</h2></div><div class="en mute" style="font-size:8pt;letter-spacing:1.6pt">04</div></div>
+  <div class="grid" style="grid-template-columns:1.15fr .85fr;gap:10mm">
+    <div>
+      <div class="grid g2" style="gap:5mm">
+        <div class="mock" style="height:62mm;background:#15161a;display:flex;align-items:center;justify-content:center">
+          <div class="logo-mark" style="background:#C8963E;color:#15161a">نوى</div>
+        </div>
+        <div class="mock" style="height:62mm;background:#F0E7D8;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:3mm">
+          <div style="width:30mm;height:30mm;border:1.2mm solid #B4543A;border-radius:50%"></div>
+          <div class="en" style="font-size:8pt;letter-spacing:3pt;color:#8a5f1d">NUWA ROASTERY</div>
+        </div>
+      </div>
+      <div class="pal" style="margin-top:5mm"><div style="background:#15161a"></div><div style="background:#C8963E"></div><div style="background:#B4543A"></div><div style="background:#F0E7D8"></div><div style="background:#5E7360"></div></div>
+      <div class="caption">منظومة الألوان: أسود محمّص · ذهبي كراميل · طيني · كريمي · أخضر حبّة</div>
+      <div class="grid g3" style="gap:4mm;margin-top:5mm">
+        <div class="mock" style="height:34mm;background:#B4543A"></div>
+        <div class="mock" style="height:34mm;background:#F0E7D8;display:flex;align-items:center;justify-content:center"><span style="font-weight:900;font-size:13pt">قهوة اليوم</span></div>
+        <div class="mock" style="height:34mm;background:#5E7360"></div>
+      </div>
+    </div>
+    <div>
+      <h3>التحدي</h3><p>محمصة جديدة في الرياض تنافس ٣٠+ محمصة بنفس اللغة البصرية (بيج وخط رقيق). المطلوب: تمييز فوري على رف المقهى وعلى شاشة الجوال.</p>
+      <div class="rule"></div>
+      <h3>الحل</h3><p>شعار عربي مرسوم يدوياً مبني على شكل حبّة القهوة، مع لوحة ألوان تتجه للأسود العميق والذهبي بدل البيج السائد، ونظام ليبل مُلوَّن بحسب درجة التحميص.</p>
+      <div class="rule"></div>
+      <h3>النتيجة</h3>
+      <div class="kv"><span>تمييز العلامة على الرف</span><b>+ ملاحظ فورياً</b></div>
+      <div class="kv"><span>متابعو إنستغرام في ٣ أشهر</span><b>2.4K → 11K</b></div>
+      <div class="kv"><span>إعادة تصميم العبوة</span><b>5 درجات تحميص</b></div>
+      <div style="margin-top:5mm;display:flex;flex-wrap:wrap;gap:2mm">
+        <span class="tag">Logotype عربي</span><span class="tag">Brand Guidelines</span><span class="tag">Packaging</span><span class="tag">Social Kit</span>
+      </div>
+    </div>
+  </div>
+  <div class="folio"><span>CASE 01 — NUWA ROASTERY</span><span>BRAND IDENTITY</span><span>04</span></div>
+</section>
+
+<!-- 05 CASE 02 SOCIAL -->
+<section class="p">
+  <div class="hd"><div><div class="kicker">Case Study 02 — Social Media Campaign</div><h2>حملة رمضان — سلسلة مطاعم</h2></div><div class="en mute" style="font-size:8pt;letter-spacing:1.6pt">05</div></div>
+  <div class="grid" style="grid-template-columns:.85fr 1.15fr;gap:10mm">
+    <div>
+      <h3>الفكرة</h3><p>«مائدة تجمع» — نظام بصري واحد يعمل على ٤ منصات بمقاسات مختلفة، مبني على زخرفة هندسية مبسّطة ولون بنفسجي ليلي بدل الذهبي المكرر في كل حملات رمضان.</p>
+      <div class="rule"></div>
+      <h3>المخرجات</h3>
+      <ul style="padding-right:5mm"><li>٣٠ منشوراً لتقويم الشهر كاملاً</li><li>١٢ ستوري تفاعلي + قوالب عدّ تنازلي</li><li>٦ إعلانات أداء بمقاسات ميتا وسناب</li><li>منيو إفطار وسحور مطبوع</li></ul>
+      <div class="rule"></div>
+      <div class="kv"><span>معدل التفاعل</span><b>+86%</b></div>
+      <div class="kv"><span>حجوزات الإفطار</span><b>+42%</b></div>
+      <div class="kv"><span>تكلفة النقرة</span><b>−31%</b></div>
+    </div>
+    <div>
+      <div class="grid g3" style="gap:4mm">
+        <div class="sq" style="background:#2A1B4A;color:#fff"><div><div style="font-size:8pt;letter-spacing:2pt;color:#C8963E" class="en">RAMADAN</div><div style="font-weight:900;font-size:15pt;margin-top:2mm">مائدة<br>تجمع</div></div></div>
+        <div class="sq" style="background:#3C2A63;color:#fff"><div style="font-weight:700;font-size:11pt">عرض الإفطار<br><span style="color:#C8963E;font-size:20pt;font-weight:900">٩٩ ر.س</span></div></div>
+        <div class="sq" style="background:#F0E7D8"><div><div style="font-weight:900;font-size:12pt">موعد الإفطار</div><div class="en" style="font-size:22pt;font-weight:800;color:#B4543A">18:42</div></div></div>
+        <div class="sq" style="background:#C8963E;color:#2A1B4A"><div style="font-weight:900;font-size:12pt">سحور<br>حتى ٢ ص</div></div>
+        <div class="sq" style="background:#2A1B4A;border:1.2mm solid #C8963E;color:#fff"><div style="font-weight:700;font-size:10pt">باقي للإفطار<br><span class="en" style="font-size:18pt;font-weight:800;color:#C8963E">02:15</span></div></div>
+        <div class="sq" style="background:#5E7360;color:#fff"><div style="font-weight:900;font-size:12pt">احجز<br>طاولتك</div></div>
+      </div>
+      <div class="grid g4" style="gap:4mm;margin-top:4mm">
+        <div class="story" style="background:#2A1B4A"></div>
+        <div class="story" style="background:#3C2A63;display:flex;align-items:flex-end;padding:3mm"><div class="bar" style="width:100%;background:#C8963E"></div></div>
+        <div class="story" style="background:#C8963E"></div>
+        <div class="story" style="background:#F0E7D8"></div>
+      </div>
+      <div class="caption">نظام ثابت: شبكة، تدرّج لوني، وموضع ثابت للشعار والعرض.</div>
+    </div>
+  </div>
+  <div class="folio"><span>CASE 02 — RAMADAN CAMPAIGN</span><span>SOCIAL MEDIA</span><span>05</span></div>
+</section>
+
+<!-- 06 CASE 03 PACKAGING -->
+<section class="p">
+  <div class="hd"><div><div class="kicker">Case Study 03 — Packaging</div><h2>«رُطَب» — عبوات تمور فاخرة</h2></div><div class="en mute" style="font-size:8pt;letter-spacing:1.6pt">06</div></div>
+  <div class="grid" style="grid-template-columns:1.2fr .8fr;gap:10mm">
+    <div>
+      <div class="grid g3" style="gap:5mm">
+        <div class="mock" style="height:78mm;background:linear-gradient(160deg,#7A3B2E,#4A2118);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4mm;color:#E8D9B5">
+          <div style="width:18mm;height:18mm;border:1mm solid #C8963E;border-radius:50%"></div>
+          <div style="font-weight:900;font-size:16pt">رُطَب</div>
+          <div class="en" style="font-size:7pt;letter-spacing:3pt">MEDJOOL · 400g</div>
+        </div>
+        <div class="mock" style="height:78mm;background:#E8D9B5;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4mm;color:#4A2118">
+          <div style="font-weight:900;font-size:16pt">رُطَب</div>
+          <div style="width:30mm;height:30mm;background:#C8963E;border-radius:2mm"></div>
+          <div class="en" style="font-size:7pt;letter-spacing:3pt">SUKKARI · 250g</div>
+        </div>
+        <div class="mock" style="height:78mm;background:#2E3B33;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4mm;color:#E8D9B5">
+          <div style="font-weight:900;font-size:16pt">رُطَب</div>
+          <div style="width:26mm;height:12mm;border:1mm solid #E8D9B5"></div>
+          <div class="en" style="font-size:7pt;letter-spacing:3pt">GIFT BOX · 1kg</div>
+        </div>
+      </div>
+      <div class="grid g2" style="gap:5mm;margin-top:5mm">
+        <div class="mock" style="height:30mm;background:#F0E7D8;display:flex;align-items:center;justify-content:center"><span class="en mute" style="font-size:8pt;letter-spacing:2pt">DIELINE · PRINT-READY · CMYK</span></div>
+        <div class="pal" style="height:30mm"><div style="background:#4A2118"></div><div style="background:#7A3B2E"></div><div style="background:#C8963E"></div><div style="background:#E8D9B5"></div><div style="background:#2E3B33"></div></div>
+      </div>
+    </div>
+    <div>
+      <h3>التحدي</h3><p>مصدّر تمور يبيع بالجملة ويريد دخول سوق الهدايا الفاخرة والتصدير — يحتاج عبوة ترفع القيمة المدركة وتعمل بالعربية والإنجليزية معاً.</p>
+      <div class="rule"></div>
+      <h3>الحل</h3><p>نظام ألوان يميّز كل صنف (مجدول، سكري، خلاص)، تايبوغرافي عربي بارز مع سطر لاتيني هادئ، وطبقة ذهبية (Foil) على الشعار فقط لضبط التكلفة.</p>
+      <div class="rule"></div>
+      <div class="kv"><span>سعر البيع للعبوة</span><b>+65%</b></div>
+      <div class="kv"><span>دخول سلاسل تجزئة</span><b>3 سلاسل</b></div>
+      <div class="kv"><span>تكلفة الطباعة</span><b>مضبوطة بلون واحد خاص</b></div>
+      <div style="margin-top:5mm;display:flex;flex-wrap:wrap;gap:2mm"><span class="tag">Dieline</span><span class="tag">Foil Stamping</span><span class="tag en">3D Mockup</span><span class="tag">Label System</span></div>
+    </div>
+  </div>
+  <div class="folio"><span>CASE 03 — RUTAB DATES</span><span>PACKAGING</span><span>06</span></div>
+</section>
+
+<!-- 07 CASE 04 UI -->
+<section class="p">
+  <div class="hd"><div><div class="kicker">Case Study 04 — UI / UX</div><h2>«وفّر» — تطبيق توصيل بقالة RTL</h2></div><div class="en mute" style="font-size:8pt;letter-spacing:1.6pt">07</div></div>
+  <div class="grid" style="grid-template-columns:1.25fr .75fr;gap:10mm">
+    <div style="display:flex;gap:6mm;align-items:center">
+      <div class="phone">
+        <div style="padding:5mm 4mm;background:#0F5132;color:#fff;height:34mm">
+          <div style="font-size:7pt;opacity:.8">التوصيل إلى</div><div style="font-weight:700;font-size:9pt">حي النرجس، الرياض</div>
+          <div style="margin-top:3mm;background:rgba(255,255,255,.18);border-radius:2mm;height:7mm"></div>
+        </div>
+        <div style="padding:4mm">
+          <div style="display:flex;gap:2mm">
+            <div style="flex:1;height:16mm;background:#E6F0EA;border-radius:2mm"></div>
+            <div style="flex:1;height:16mm;background:#FDF0E6;border-radius:2mm"></div>
+            <div style="flex:1;height:16mm;background:#F0E7D8;border-radius:2mm"></div>
+          </div>
+          <div style="font-weight:700;font-size:8pt;margin:3mm 0">الأكثر طلباً</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:2mm">
+            <div style="height:22mm;background:#F5F5F3;border-radius:2mm"></div><div style="height:22mm;background:#F5F5F3;border-radius:2mm"></div>
+            <div style="height:22mm;background:#F5F5F3;border-radius:2mm"></div><div style="height:22mm;background:#F5F5F3;border-radius:2mm"></div>
+          </div>
+        </div>
+      </div>
+      <div class="phone" style="margin-top:12mm">
+        <div style="padding:5mm 4mm">
+          <div class="bar" style="width:40%"></div>
+          <div style="height:40mm;background:#E6F0EA;border-radius:2mm;margin:4mm 0"></div>
+          <div style="font-weight:900;font-size:10pt">زيت زيتون بكر</div>
+          <div style="color:#0F5132;font-weight:800;font-size:12pt;margin-top:1mm">٣٨ ر.س</div>
+          <div style="margin-top:4mm;height:9mm;background:#0F5132;border-radius:20mm;color:#fff;display:flex;align-items:center;justify-content:center;font-size:8pt;font-weight:700">أضف إلى السلة</div>
+        </div>
+      </div>
+      <div>
+        <div class="card" style="padding:5mm"><h3 style="font-size:10pt">Design System</h3>
+        <div class="pal" style="height:9mm;margin:3mm 0"><div style="background:#0F5132"></div><div style="background:#E6F0EA"></div><div style="background:#C8963E"></div><div style="background:#15161a"></div></div>
+        <small class="mute">8pt Grid · 12 مكوّناً · حالات RTL كاملة</small></div>
+        <div class="card" style="padding:5mm;margin-top:4mm"><h3 style="font-size:10pt">Prototype</h3><small class="mute">٣ مسارات مستخدم تفاعلية في Figma</small></div>
+      </div>
+    </div>
+    <div>
+      <h3>التحدي</h3><p>تطبيق بتجربة مقلوبة حرفياً من قالب إنجليزي: أسهم معكوسة، أرقام غير متسقة، وسلة تحتاج ٦ خطوات.</p>
+      <div class="rule"></div>
+      <h3>الحل</h3><p>بناء منظومة RTL أصلية: اتجاه بصري عربي، أرقام عربية-هندية اختيارية، وتقليص مسار الشراء إلى ٣ خطوات مع تثبيت زر الدفع.</p>
+      <div class="rule"></div>
+      <div class="kv"><span>إكمال عملية الشراء</span><b>+37%</b></div>
+      <div class="kv"><span>خطوات السلة</span><b>6 → 3</b></div>
+      <div class="kv"><span>تقييم المتجر</span><b>3.4 → 4.6</b></div>
+      <div style="margin-top:5mm;display:flex;flex-wrap:wrap;gap:2mm"><span class="tag en">Figma</span><span class="tag">RTL System</span><span class="tag en">Prototype</span><span class="tag">Handoff</span></div>
+    </div>
+  </div>
+  <div class="folio"><span>CASE 04 — WAFFER APP</span><span>UI / UX</span><span>07</span></div>
+</section>
+
+<!-- 08 CASE 05 ADS -->
+<section class="p">
+  <div class="hd"><div><div class="kicker">Case Study 05 — Advertising</div><h2>إعلانات أداء ولوحات طرقية</h2></div><div class="en mute" style="font-size:8pt;letter-spacing:1.6pt">08</div></div>
+  <div class="grid g2" style="gap:8mm">
+    <div>
+      <div class="mock" style="height:52mm;background:linear-gradient(120deg,#15161a 55%,#C8963E 55%);color:#fff;display:flex;align-items:center;padding:8mm">
+        <div><div class="kicker">Billboard · 6×3m</div><div style="font-weight:900;font-size:22pt;line-height:1.2;margin-top:3mm">جهّز بيتك<br>للموسم</div><div style="margin-top:3mm;font-size:9pt;color:#CFC8BA">خصومات تصل إلى ٥٠٪</div></div>
+      </div>
+      <div class="caption">قاعدة اللوحة الطرقية: ٧ كلمات كحد أقصى، تباين عالٍ، وقراءة من ٥٠ متراً.</div>
+      <div class="grid g2" style="gap:4mm;margin-top:4mm">
+        <div class="mock" style="height:40mm;background:#B4543A;color:#fff;display:flex;align-items:flex-end;padding:5mm"><div style="font-weight:900;font-size:13pt">اشترِ ١<br>واحصل على ٢</div></div>
+        <div class="mock" style="height:40mm;background:#F0E7D8;display:flex;align-items:flex-end;padding:5mm"><div style="font-weight:900;font-size:13pt;color:#15161a">توصيل<br>مجاني اليوم</div></div>
+      </div>
+    </div>
+    <div>
+      <div class="grid g4" style="gap:3.5mm">
+        <div class="story" style="background:#15161a;color:#fff;display:flex;align-items:center;justify-content:center"><small class="en" style="letter-spacing:1.5pt">9:16</small></div>
+        <div class="story" style="background:#5E7360"></div>
+        <div class="story" style="background:#C8963E"></div>
+        <div class="story" style="background:#B4543A"></div>
+      </div>
+      <div class="caption">نسخ متعددة لاختبار A/B على ميتا وسناب وتيك توك.</div>
+      <div class="rule"></div>
+      <h3>منهجية الإعلان الذي يبيع</h3>
+      <ul style="padding-right:5mm">
+        <li><b>الرسالة أولاً:</b> عرض واحد واضح لكل إعلان، لا ثلاثة.</li>
+        <li><b>التقاط أول ثانية:</b> تباين لوني حادّ وحركة في أعلى الإطار.</li>
+        <li><b>نص قابل للقراءة على الجوال:</b> حد أدنى ٣٢px للعنوان.</li>
+        <li><b>٣ نسخ على الأقل:</b> لاختبار الصورة والعنوان والعرض.</li>
+      </ul>
+      <div class="rule"></div>
+      <div class="kv"><span>متوسط انخفاض تكلفة النقرة</span><b>−28%</b></div>
+      <div class="kv"><span>معدل مشاهدة الـ 3 ثوانٍ</span><b>+54%</b></div>
+    </div>
+  </div>
+  <div class="folio"><span>CASE 05 — PERFORMANCE ADS</span><span>ADVERTISING</span><span>08</span></div>
+</section>
+
+<!-- 09 TYPOGRAPHY -->
+<section class="p">
+  <div class="hd"><div><div class="kicker">Specialty</div><h2>التايبوغرافي العربي — شعارات مكتوبة</h2></div><div class="en mute" style="font-size:8pt;letter-spacing:1.6pt">09</div></div>
+  <div class="grid g3" style="gap:5mm">
+    <div class="mock" style="height:48mm;background:#15161a;color:#C8963E;display:flex;align-items:center;justify-content:center;font-size:26pt;font-weight:900">مَيّار</div>
+    <div class="mock" style="height:48mm;background:#F0E7D8;color:#B4543A;display:flex;align-items:center;justify-content:center;font-size:26pt;font-weight:900">سَدِيم</div>
+    <div class="mock" style="height:48mm;background:#5E7360;color:#fff;display:flex;align-items:center;justify-content:center;font-size:26pt;font-weight:900">وَرْد</div>
+  </div>
+  <div class="grid g3" style="gap:5mm;margin-top:5mm">
+    <div class="mock" style="height:40mm;background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2mm"><div style="font-size:20pt;font-weight:900">أُفُق</div><div class="en" style="font-size:7.5pt;letter-spacing:4pt;color:#8A8372">OFOQ STUDIO</div></div>
+    <div class="mock" style="height:40mm;background:#B4543A;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2mm"><div style="font-size:20pt;font-weight:900">نَسيم</div><div class="en" style="font-size:7.5pt;letter-spacing:4pt;opacity:.8">NASEEM</div></div>
+    <div class="mock" style="height:40mm;background:#C8963E;color:#15161a;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2mm"><div style="font-size:20pt;font-weight:900">ضِياء</div><div class="en" style="font-size:7.5pt;letter-spacing:4pt">DIYAA</div></div>
+  </div>
+  <div class="rule"></div>
+  <div class="grid g2" style="gap:10mm">
+    <p>الشعار العربي ليس خطاً جاهزاً مكتوباً بالاسم. أعمل على تعديل الحروف نفسها: ضبط النِسَب، معالجة النقاط، وربط الحروف ليصبح الاسم شكلاً واحداً قابلاً للتذكّر والتصغير إلى أيقونة تطبيق.</p>
+    <p class="mute">كل شعار يُسلَّم بـ ٣ صيغ (أفقي، عمودي، أيقونة) + نسخة لاتينية مزدوجة + ملفات متجهة (AI/SVG/EPS) ونسخة أحادية اللون للطباعة الاقتصادية.</p>
+  </div>
+  <div class="folio"><span>ARABIC TYPOGRAPHY</span><span>LOGOTYPES</span><span>09</span></div>
+</section>
+
+<!-- 10 PROCESS -->
+<section class="p">
+  <div class="hd"><div><div class="kicker">How I Work</div><h2>منهجية العمل في ٥ مراحل</h2></div><div class="en mute" style="font-size:8pt;letter-spacing:1.6pt">10</div></div>
+  <div class="grid g2" style="gap:10mm">
+    <div style="display:flex;flex-direction:column;gap:6mm">
+      <div class="step"><div class="i">1</div><div><h3>الاستكشاف</h3><p>استبيان العلامة، تحليل ٣–٥ منافسين، وتحديد هدف تجاري قابل للقياس.</p></div></div>
+      <div class="step"><div class="i">2</div><div><h3>الاتجاه البصري</h3><p>لوحة مزاج (Moodboard) واتجاهان مختلفان — نتفق على واحد قبل كتابة أي تفصيل.</p></div></div>
+      <div class="step"><div class="i">3</div><div><h3>التصميم</h3><p>تنفيذ الاتجاه المختار بالكامل مع جولتَي تعديل مشمولتين.</p></div></div>
+      <div class="step"><div class="i">4</div><div><h3>المنظومة</h3><p>بناء دليل الهوية والقوالب لتبقى العلامة ثابتة بعد انتهاء المشروع.</p></div></div>
+      <div class="step"><div class="i">5</div><div><h3>التسليم والدعم</h3><p>ملفات مصدرية ومطبعية منظمة + جلسة تسليم ودعم ٣٠ يوماً.</p></div></div>
+    </div>
+    <div>
+      <div class="card" style="background:var(--ink);color:#fff;border:none">
+        <div class="kicker">Commitment</div>
+        <p class="bigq" style="color:#fff;margin-top:4mm">«لا أسلّم تصميماً لا أستطيع شرح سبب كل قرار فيه.»</p>
+      </div>
+      <div class="card" style="margin-top:5mm">
+        <h3 style="margin-bottom:3.5mm">ما تحصل عليه دائماً</h3>
+        <div class="kv"><span>ملفات مصدرية منظّمة</span><b>AI · PSD · FIG</b></div>
+        <div class="kv"><span>صيغ تصدير</span><b>PDF · SVG · PNG</b></div>
+        <div class="kv"><span>ملف مطابع</span><b>CMYK + Bleed</b></div>
+        <div class="kv"><span>حقوق الاستخدام</span><b>كاملة للعميل</b></div>
+        <div class="kv" style="border:none"><span>جولات التعديل</span><b>جولتان مشمولتان</b></div>
+      </div>
+    </div>
+  </div>
+  <div class="folio"><span>PROCESS</span><span>5 STAGES</span><span>10</span></div>
+</section>
+
+<!-- 11 PACKAGES -->
+<section class="p">
+  <div class="hd"><div><div class="kicker">Engagement</div><h2>باقات العمل</h2></div><div class="en mute" style="font-size:8pt;letter-spacing:1.6pt">11</div></div>
+  <div class="grid g3">
+    <div class="pack"><div class="top"><div class="kicker">Starter</div><h3 style="margin-top:2mm">الانطلاقة</h3><p class="mute" style="font-size:9pt">علامة جديدة تحتاج أساساً بصرياً.</p></div>
+      <ul><li>شعار بـ ٣ صيغ</li><li>منظومة ألوان وخطوط</li><li>بطاقة أعمال + ترويسة</li><li>٦ قوالب سوشال</li><li>دليل هوية مختصر</li><li class="mute">مدة التنفيذ: ١٠ أيام عمل</li></ul></div>
+    <div class="pack"><div class="top dark"><div class="kicker">Most Requested</div><h3 style="margin-top:2mm;color:#fff">الهوية الكاملة</h3><p style="font-size:9pt;color:#CFC8BA">الأكثر طلباً من العلامات العربية.</p></div>
+      <ul><li>كل ما في «الانطلاقة»</li><li>تطبيقات مطبوعة كاملة</li><li>تصميم عبوة / منيو</li><li>٢٠ قالب سوشال + ستوري</li><li>دليل هوية عربي/إنجليزي</li><li class="mute">مدة التنفيذ: ٣ أسابيع</li></ul></div>
+    <div class="pack"><div class="top"><div class="kicker">Retainer</div><h3 style="margin-top:2mm">عقد شهري</h3><p class="mute" style="font-size:9pt">إنتاج مستمر لفريق التسويق.</p></div>
+      <ul><li>٢٠–٣٠ تصميماً شهرياً</li><li>إعلانات أداء بنسخ متعددة</li><li>حملات موسمية</li><li>أولوية تنفيذ ٤٨ ساعة</li><li>تقرير أداء بصري شهري</li><li class="mute">التزام: ٣ أشهر</li></ul></div>
+  </div>
+  <div class="rule"></div>
+  <div class="grid g3" style="gap:5mm">
+    <div class="card"><h3 style="font-size:10.5pt">طرق التعاون</h3><p>مشروع بسعر ثابت · عقد شهري · باليوم التصميمي للوكالات.</p></div>
+    <div class="card"><h3 style="font-size:10.5pt">الدفع</h3><p>٥٠٪ مقدماً و٥٠٪ عند التسليم · تحويل بنكي أو منصات دفع دولية.</p></div>
+    <div class="card"><h3 style="font-size:10.5pt">العمل عن بُعد</h3><p>تعاون مع عملاء في السعودية، الإمارات، قطر، مصر — بفارق توقيت مرن.</p></div>
+  </div>
+  <div class="folio"><span>PACKAGES</span><span>ENGAGEMENT MODELS</span><span>11</span></div>
+</section>
+
+<!-- 12 CONTACT -->
+<section class="p cover">
+  <div class="blob b1" style="left:auto;right:-30mm;bottom:-50mm"></div>
+  <div class="blob b2" style="left:auto;right:70mm;bottom:-26mm"></div>
+  <div class="inner">
+    <div class="kicker">Let's Work Together</div>
+    <div>
+      <h1 style="font-size:44pt">جاهز لبناء علامتك<br>القادمة.</h1>
+      <p class="sub" style="margin-top:6mm">أرسل لي نبذة عن مشروعك وهدفه التجاري، وسأرد بخطة عمل واضحة بالمدة والتكلفة خلال ٢٤ ساعة.</p>
+      <div class="grid g4" style="gap:5mm;margin-top:10mm;max-width:210mm">
+        <div><small class="kicker">Email</small><p style="color:#fff;margin-top:1.5mm">[ email@domain.com ]</p></div>
+        <div><small class="kicker">WhatsApp</small><p style="color:#fff;margin-top:1.5mm" class="en">[ +000 000 0000 ]</p></div>
+        <div><small class="kicker">Behance</small><p style="color:#fff;margin-top:1.5mm" class="en">[ behance.net/user ]</p></div>
+        <div><small class="kicker">Instagram</small><p style="color:#fff;margin-top:1.5mm" class="en">[ @username ]</p></div>
+      </div>
+    </div>
+    <div class="covmeta"><span>شكراً لوقتك</span><span>·</span><span>PORTFOLIO 2026</span><span>·</span><span>GRAPHIC DESIGN · BRANDING · UI</span></div>
+  </div>
+</section>
+
+</body>
+</html>
